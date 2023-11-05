@@ -1,0 +1,19 @@
+public class CaesarCipher {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the message to be encrypted: ");
+        String message = scanner.nextLine();
+System.out.print("Enter the encryption key (a lowercase letter): ");
+        char key = scanner.next().charAt(0);
+        if (!isValidLowerCaseLetter(key)) {
+            System.out.println("Invalid key. Please enter a lowercase letter.");
+            scanner.close();
+            return;
+        }
+
+        System.out.println("Message: " + message);
+        System.out.println("Encryption Key: " + key);
+       scanner.close();
+    }
+    private static boolean isValidLowerCaseLetter(char c) {
+        return c >= 'a' && c <= 'z';
